@@ -1,0 +1,26 @@
+{
+    "name": "deminy/phpunit-explained",
+    "type": "project",
+    "description": "To explain PHPUnit usages by using various examples.",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "phpunit/phpunit": "~9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Deminy\\Unit\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config" : {
+        "platform": {
+            "php": "8.2"
+        },
+        "apcu-autoloader": true,
+        "discard-changes": true,
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
