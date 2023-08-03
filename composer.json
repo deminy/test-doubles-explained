@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.2",
+        "crowdstar/reflection": "~2.0.0",
         "phpunit/phpunit": "~9.6"
     },
     "autoload": {
