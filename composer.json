@@ -8,9 +8,9 @@
         "phpunit/phpunit": "~9.6"
     },
     "autoload": {
-        "psr-4": {
-            "Deminy\\Unit\\": "src/"
-        }
+        "files": [
+            "./TestClass.php"
+    ]
     },
     "minimum-stability": "stable",
     "prefer-stable": true,

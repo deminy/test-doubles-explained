@@ -2,7 +2,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="./tests/bootstrap.php"
+         bootstrap="./bootstrap.php"
          colors="true" convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
@@ -11,7 +11,7 @@
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <testsuites>
     <testsuite name="default">
-      <directory suffix="Test.php">./tests/unit</directory>
+      <directory suffix="Test.php">./unit</directory>
     </testsuite>
   </testsuites>
 </phpunit>
