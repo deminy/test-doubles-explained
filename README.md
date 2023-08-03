@@ -1,5 +1,13 @@
 # To explain PHPUnit usages by using various examples.
 
+## Usage
+
+```bash
+./vendor/bin/phpunit
+# or
+./vendor/bin/phpunit --debug
+```
+
 ## References
 
 * [PHPUnit: Test Doubles]: The official documentation.
