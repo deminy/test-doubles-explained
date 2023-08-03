@@ -32,6 +32,12 @@ class TestClass
         return $this->var;
     }
 
+    public function otherMethod(): int
+    {
+        $this->debug('TestClass::otherMethod() is executed.');
+        return -1;
+    }
+
     protected function debug(string $message): void
     {
         fwrite(STDOUT, $message . PHP_EOL);
