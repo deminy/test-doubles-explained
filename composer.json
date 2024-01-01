@@ -9,8 +9,8 @@
         "phpunit/phpunit": "~9.0 || ~10.0"
     },
     "autoload": {
-        "files": [
-            "./TestClass.php"
-        ]
+        "psr-4": {
+            "Deminy\\UnitTests\\": "unit/"
+        }
     }
 }

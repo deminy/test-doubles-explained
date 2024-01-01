@@ -1,5 +1,7 @@
 **To explain [test doubles in PHPUnit] by using various examples.**
 
+For details, please read the source code under folder [./unit] and run the tests using PHPUnit.
+
 ## Usage
 
 First, run the following command to install/update Composer packages:
@@ -12,8 +14,6 @@ Now we can run PHPUnit tests:
 
 ```bash
 ./vendor/bin/phpunit
-# or
-./vendor/bin/phpunit --debug
 ```
 
 ## References
@@ -23,3 +23,4 @@ Now we can run PHPUnit tests:
 
 [test doubles in PHPUnit]: https://docs.phpunit.de/en/9.6/test-doubles.html
 [StackOverflow: Mocks vs Stubs in PHPUnit]: https://stackoverflow.com/a/45975572
+[./unit]: https://github.com/deminy/test-doubles-explained/tree/master/unit
