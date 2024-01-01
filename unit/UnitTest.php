@@ -14,7 +14,7 @@ class UnitTest extends TestCase
     /**
      * Test the class to make sure it should work as expected without mocking, stubbing, or anything else.
      */
-    public function testWitoutTestDoubles(): void
+    public function testWithoutTestDoubles(): void
     {
         $obj = new TestClass();
 

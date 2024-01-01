@@ -4,7 +4,7 @@
     "description": "To explain test doubles in PHPUnit by using various examples.",
     "license": "MIT",
     "require": {
-        "php": ">=8.0",
+        "php": ">=7.3",
         "crowdstar/reflection": "~2.0.0",
         "phpunit/phpunit": "~9.0 || ~10.0"
     },
