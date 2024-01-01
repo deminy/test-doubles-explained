@@ -50,5 +50,5 @@ return (new PhpCsFixer\Config())
         'standardize_not_equals'                 => true,
         'yoda_style'                             => ['always_move_variable' => false, 'equal' => false, 'identical' => false],
     ])
-    ->setFinder(PhpCsFixer\Finder::create()->exclude(['temp', 'vendor'])->in(__DIR__))
+    ->setFinder(PhpCsFixer\Finder::create()->exclude(['vendor'])->in(__DIR__))
     ->setUsingCache(false);
