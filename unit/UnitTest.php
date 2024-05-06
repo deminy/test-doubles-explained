@@ -20,11 +20,11 @@ class UnitTest extends TestCase
     {
         $obj = new TestClass();
 
-        self::assertSame(2, $obj->getVar(), 'Property $var is initialized with 2 in constructor.');
+        self::assertSame(2, $obj->getVar(), 'Property $var is initialized with a default value of int(2) through the constructor.');
         $obj->setVar(3);
-        self::assertSame(3, $obj->getVar(), 'Property $var is set to 3 explicitly using method setVar().');
+        self::assertSame(3, $obj->getVar(), 'Property $var is set to int(3) explicitly using method setVar().');
 
-        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns -1.');
+        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns int(-1).');
     }
 
     /**
@@ -50,15 +50,16 @@ class UnitTest extends TestCase
         //       the test will fail. The latter statement must be executed in parent class.
         $obj = $this->createMock(TestClass::class);
 
-        self::assertSame(0, $obj->getVar(), 'Property $var is initialized with 2 in constructor.');
+        // Method "getVar()", "setVar()", and any other defined method of object $obj can still be invoked, but never executed.
+        self::assertSame(0, $obj->getVar(), 'Return value of method getVar() is a default value of the data type returned.');
         $obj->setVar(3); // Method "setVar()" is not actually executed.
-        self::assertSame(0, $obj->getVar(), '');
+        self::assertSame(0, $obj->getVar(), 'Return value of method getVar() is a default value of the data type returned.');
 
         // Property "var" holds an integer value "1", which is the default value of the property.
         // This is different from the next test case (testDummyWithOriginalConstructorEnabled).
         self::assertSame(1, Reflection::getProperty($obj, 'var'), 'The property actually holds a non-zero integer value "1".');
 
-        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns 0 instead.');
+        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns int(0) instead.');
     }
 
     /**
@@ -78,7 +79,7 @@ class UnitTest extends TestCase
         // This is different from the previous test case (testDummyUsingCreateMock).
         self::assertSame(2, Reflection::getProperty($obj, 'var'), 'The property actually holds a non-zero integer value "2".');
 
-        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns 0 instead.');
+        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns int(0) instead.');
     }
 
     /**
@@ -98,11 +99,11 @@ class UnitTest extends TestCase
         $obj->expects($this->once())->method('setVar')->with(3);
 
         // Method "getVar()" can still be invoked and executed.
-        self::assertSame(2, $obj->getVar(), 'Property $var was initialized with 2 in constructor.');
+        self::assertSame(2, $obj->getVar(), 'Property $var was initialized with int(2) in constructor.');
         $obj->setVar(3); // Method "setVar()" is not actually executed.
-        self::assertSame(2, $obj->getVar(), 'Property $var was initialized with 2 in constructor.');
+        self::assertSame(2, $obj->getVar(), 'Property $var was initialized with int(2) in constructor.');
 
-        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns -1.');
+        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns int(-1).');
     }
 
     /**
@@ -118,15 +119,15 @@ class UnitTest extends TestCase
         $obj->method('getVar')->willReturn(4);
 
         // Method "getVar()" can still be invoked, but never executed.
-        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always 4.');
+        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always int(4).');
         $obj->setVar(3); // Method "setVar()" is not actually executed.
-        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always 4.');
+        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always int(4).');
 
         // Property "var" holds an integer value "1", which is the default value of the property.
         // This means that during the life cycle of the stubbed object, the property is never set to any value via any method.
         self::assertSame(1, Reflection::getProperty($obj, 'var'), 'The property actually holds a non-zero integer value "1".');
 
-        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns 0 instead.');
+        self::assertSame(0, $obj->otherMethod(), 'Method otherMethod() is not actually executed and returns int(0) instead.');
     }
 
     /**
@@ -148,14 +149,14 @@ class UnitTest extends TestCase
         $obj->method('getVar')->willReturn(4); // Stub a method.
 
         // Method "getVar()" can still be invoked, but never executed.
-        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always 4.');
+        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always int(4).');
         $obj->setVar(3); // Method "setVar()" is not actually executed.
-        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always 4.');
+        self::assertSame(4, $obj->getVar(), 'Return value of method getVar() is always int(4).');
 
         // Property "var" holds an integer value "2", which is set in the constructor when the object was created.
         // This means that during the life cycle of the mocked/stubbed object, the property is never set to any value via any method.
         self::assertSame(2, Reflection::getProperty($obj, 'var'), 'The property actually holds a non-zero integer value "1".');
 
-        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns -1.');
+        self::assertSame(-1, $obj->otherMethod(), 'Method otherMethod() returns int(-1).');
     }
 }
