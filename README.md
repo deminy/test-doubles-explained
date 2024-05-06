@@ -16,6 +16,19 @@ Now we can run PHPUnit tests:
 ./vendor/bin/phpunit
 ```
 
+## Version Matrix
+
+Following table shows the versions of PHP and PHPUnit used to run the tests of this project via GitHub Actions:
+
+| PHP Versions | PHPUnit Versions |
+|--------------|------------------|
+| PHP 7.3      | PHPUnit 9        |
+| PHP 7.4      | PHPUnit 9        |
+| PHP 8.0      | PHPUnit 9        |
+| PHP 8.1      | PHPUnit 10       |
+| PHP 8.2      | PHPUnit 11       |
+| PHP 8.3      | PHPUnit 11       |
+
 ## References
 
 * [test doubles in PHPUnit]: The official documentation.
