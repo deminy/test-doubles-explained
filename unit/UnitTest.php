@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Deminy\UnitTests;
 
 use CrowdStar\Reflection\Reflection;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
  * @coversNothing
  */
+#[CoversNothing()]
 class UnitTest extends TestCase
 {
     /**

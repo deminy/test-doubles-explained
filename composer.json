@@ -1,12 +1,12 @@
 {
     "name": "deminy/test-doubles-explained",
     "type": "project",
-    "description": "To explain test doubles in PHPUnit by using various examples.",
+    "description": "To explain test doubles in PHPUnit 9+ by using various examples.",
     "license": "MIT",
     "require": {
         "php": ">=7.3",
         "crowdstar/reflection": "~1.0.0 || ~2.0.0",
-        "phpunit/phpunit": "~9.0 || ~10.0"
+        "phpunit/phpunit": "~9.0 || ~10.0 || ~11.0"
     },
     "autoload": {
         "psr-4": {
